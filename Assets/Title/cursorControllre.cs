@@ -15,7 +15,7 @@ public class cursorControllre : MonoBehaviour
 
     void Start()
     {
-         speed = 3f;
+         speed = 5f;
     }
 
     void Update()
@@ -27,6 +27,18 @@ public class cursorControllre : MonoBehaviour
         {
             SceneManager.LoadScene("GameScene");
         }
+        if (S2 == true && Input.GetButtonDown("Fire1"))
+        {
+            SceneManager.LoadScene("GameScene2");
+        }
+        if (S3 == true && Input.GetButtonDown("Fire1"))
+        {
+            SceneManager.LoadScene("GameScene3");
+        }
+        if (S4 == true && Input.GetButtonDown("Fire1"))
+        {
+            SceneManager.LoadScene("GameScene4");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -34,6 +46,18 @@ public class cursorControllre : MonoBehaviour
         if(collision.tag == "S1")
         {
             S1 = true;
+        }
+        if(collision.tag == "S2")
+        {
+            S2 = true;
+        }
+        if (collision.tag == "S3")
+        {
+            S3 = true;
+        }
+        if (collision.tag == "S4")
+        {
+            S4 = true;
         }
     }
 }
