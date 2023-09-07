@@ -8,6 +8,7 @@ TagManager:
   - S2
   - S3
   - S4
+  - rule
   layers:
   - Default
   - TransparentFX
