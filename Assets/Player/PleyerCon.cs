@@ -79,10 +79,6 @@ public class PleyerCon : MonoBehaviour
             }
         }
 
-        if (dir.x!=0)
-        {
-            transform.localScale = new Vector3(dir.x, 1, 1);
-        }
     }
 
 
