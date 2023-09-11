@@ -37,5 +37,22 @@ public class Enemy : MonoBehaviour
         transform.position += dir.normalized * speed * Time.deltaTime;
 
     }
+
+    void OnTriggerEnter2D(Collider2D p)
+    {
+        // 重なった相手のタグが【Player】だったら
+        if (p.tag == "Player")
+        {
+            // 自分（敵）削除
+            Destroy(gameObject);
+        }
+
+        // 重なった相手のタグが【PlayerShot】だったら
+        if (p.tag == "PlayerShot")
+        {
+            // 自分（敵）削除
+            Destroy(gameObject);
+        }
+    }
 }
 

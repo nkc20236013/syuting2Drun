@@ -4,15 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - S1
-  - S2
-  - S3
-  - S4
-<<<<<<< HEAD
   - Enemy
-=======
-  - rule
->>>>>>> origin/main
+  - PlayerShot
   layers:
   - Default
   - TransparentFX
