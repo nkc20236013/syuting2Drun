@@ -8,7 +8,11 @@ TagManager:
   - S2
   - S3
   - S4
+<<<<<<< HEAD
   - Enemy
+=======
+  - rule
+>>>>>>> origin/main
   layers:
   - Default
   - TransparentFX
