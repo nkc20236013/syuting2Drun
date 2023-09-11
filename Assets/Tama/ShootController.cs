@@ -19,10 +19,10 @@ public class ShootController : MonoBehaviour
     }
 
     // d‚È‚è”»’è
-    void OnTriggerEnter2D(Collider2D c)
+    void OnTriggerEnter2D(Collider2D e)
     {
         // d‚È‚Á‚½‘Šè‚Ìƒ^ƒO‚ªyEnemyz‚¾‚Á‚½‚ç
-        if (c.tag == "Enemy")
+        if (e.tag == "Enemy")
         {
             // ©’eíœ
             Destroy(gameObject);
