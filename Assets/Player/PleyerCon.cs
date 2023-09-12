@@ -9,6 +9,14 @@ public class PleyerCon : MonoBehaviour
     float timer;    // 自弾の発射間隔計算用
     Animator animator;   // アニメーターコンポーネントを保存
 
+    private Rigidbody2D rb;
+
+    private float jumpForce = 350f; //ジャンプ力
+
+    public int MaxJumpCount = 2;
+
+    private int jumpCount = 0;
+
     public GameObject kedamaPre; // 弾のプレハブをセット
 
     int shotLevel;  // 武器のレベル
@@ -36,8 +44,11 @@ public class PleyerCon : MonoBehaviour
     }
 
 
+
+
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
 
         //ココにplayerである猫の動きを構成する
         speed = 7;
@@ -54,10 +65,17 @@ public class PleyerCon : MonoBehaviour
         // 画面内制限
         Vector2 pos = transform.position;
         pos.x = Mathf.Clamp(pos.x, -8.5f, 8.5f);
-        pos.y = Mathf.Clamp(pos.y, -4.25f, 4.25f);
+        //pos.y = Mathf.Clamp(pos.y, -4.25f, 4.25f);
         transform.position = pos;
 
         this.animator.speed = speedx / 1.5f;
+
+        //スペースキーでジャンプ
+        if (Input.GetKeyDown(KeyCode.Space) && this.jumpCount < MaxJumpCount) //地面につくまで < 〇回までジャンプ出来る
+        {
+            this.rb.AddForce(transform.up * jumpForce);
+            jumpCount++;
+        }
 
         // Zキーが押されているとき弾を発射
         timer += Time.deltaTime;
@@ -79,6 +97,16 @@ public class PleyerCon : MonoBehaviour
             }
         }
 
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        //地面に当たったらジャンプカウントが0になる
+        if (other.gameObject.CompareTag("Floor"))
+        {
+            jumpCount = 0;
+        }
     }
 
 

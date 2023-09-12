@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Enemy
   - PlayerShot
+  - S1
+  - rule
+  - S2
+  - S4
+  - S3
+  - Floor
   layers:
   - Default
   - TransparentFX
