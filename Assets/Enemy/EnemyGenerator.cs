@@ -11,10 +11,20 @@ public class EnemyG : MonoBehaviour
     //‚±‚Ìmouse‚ÍŒÅ’è‚Å‚È‚­‚Ä‚à‚¢‚¢
     float mouse = 0;
 
+    public GameObject Boss;
+    float Bosstime;
+
     
     void Update()
     {
         mouse += Time.deltaTime;
+        Bosstime += Time.deltaTime;
+        if(Bosstime >= 30 && Bosstime <= 30.02f)
+        {
+
+            GameObject go = Instantiate(Boss);
+            go.transform.position = new Vector3(10, 0, 0);
+        }
 
         if (mouse > span)
         {
