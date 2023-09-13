@@ -11,19 +11,44 @@ public class EnemyG : MonoBehaviour
     //‚±‚Ìmouse‚ÍŒÅ’è‚Å‚È‚­‚Ä‚à‚¢‚¢
     float mouse = 0;
 
+    int random;
+    int randoma;
     public GameObject Boss;
+    public GameObject Boss2;
+    public GameObject Boss2R;
     float Bosstime;
+    float Bossspan = 30;
 
     
     void Update()
     {
         mouse += Time.deltaTime;
         Bosstime += Time.deltaTime;
-        if(Bosstime >= 30 && Bosstime <= 30.02f)
+        if(Bosstime >= Bossspan)
         {
-
-            GameObject go = Instantiate(Boss);
-            go.transform.position = new Vector3(10, 0, 0);
+            random = Random.Range(0, 100);
+            if (random <= 50)
+            {
+                Bosstime = 0;
+                GameObject go = Instantiate(Boss);
+                go.transform.position = new Vector3(10, 0, 0);
+            }
+            else
+            {
+                randoma = Random.Range(0, 100);
+                if(randoma <= 50)
+                {
+                    Bosstime = 0;
+                    GameObject go = Instantiate(Boss2);
+                    go.transform.position = new Vector3(10, 0, 0);
+                }
+                else
+                {
+                    Bosstime = 0;
+                    GameObject go = Instantiate(Boss2R);
+                    go.transform.position = new Vector3(10, 0, 0);
+                }
+            }
         }
 
         if (mouse > span)
