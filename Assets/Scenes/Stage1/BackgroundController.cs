@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Parallax : MonoBehaviour
+public class BackgroundController : MonoBehaviour
 {
-    private float length, startpos;
-    public GameObject cam;
+    [SerializeField, Header("視差効果"),Range(0,1)]
     public float parallaxEffect;
+    private float length, startposX;
+    public GameObject cam;
     void Start()
     {
         // 背景画像のx座標
-        startpos = transform.position.x;
+        startposX = transform.position.x;
         // 背景画像のx軸方向の幅
         length = GetComponent<SpriteRenderer>().bounds.size.x;
     }
+
     private void FixedUpdate()
     {
         // 無限スクロールに使用するパラメーター
@@ -22,10 +23,10 @@ public class Parallax : MonoBehaviour
         float dist = (cam.transform.position.x * parallaxEffect);
         // 視差効果を与える処理
         // 背景画像のx座標をdistの分移動させる
-        transform.position = new Vector3(startpos + dist, transform.position.y, transform.position.z);
+        transform.position = new Vector3(startposX + dist, transform.position.y, transform.position.z);
         // 無限スクロール
         // 画面外になったら背景画像を移動させる
-        if (temp > startpos + length) startpos += length;
-        else if (temp < startpos - length) startpos -= length;
+        if (temp > startposX + length) startposX += length;
+        else if (temp < startposX - length) startposX -= length;
     }
 }

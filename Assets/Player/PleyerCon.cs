@@ -51,7 +51,7 @@ public class PleyerCon : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         //ÉRÉRÇ…playerÇ≈Ç†ÇÈîLÇÃìÆÇ´Çç\ê¨Ç∑ÇÈ
-        speed = 1;
+        speed = 7;
         this.animator = GetComponent<Animator>();
     }
 
@@ -64,7 +64,7 @@ public class PleyerCon : MonoBehaviour
 
         // âÊñ ì‡êßå¿
         Vector2 pos = transform.position;
-        pos.x = Mathf.Clamp(pos.x, -20f, 20f);
+        //pos.x = Mathf.Clamp(pos.x, -20f, 20f);
         //pos.y = Mathf.Clamp(pos.y, -4.25f, 4.25f);
         transform.position = pos;
 
