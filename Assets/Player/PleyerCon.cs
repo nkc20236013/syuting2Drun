@@ -1,11 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-<<<<<<< HEAD
 using UnityEngine.SceneManagement;
-=======
->>>>>>> origin/main
-using UnityEngine.UI;
 
 public class PleyerCon : MonoBehaviour
 {
@@ -26,17 +22,13 @@ public class PleyerCon : MonoBehaviour
 
     int shotLevel;  // 武器のレベル
 
-<<<<<<< HEAD
     int hp; // 残りHP
 
-    public Text hpLabel;
-=======
     //最大HPと現在のHP。
     public int maxHp = 10;
     public int Hp;
     //Slider
     public Slider slider;
->>>>>>> origin/main
 
     public int ShotLevel
     {
@@ -46,16 +38,6 @@ public class PleyerCon : MonoBehaviour
             shotLevel = Mathf.Clamp(shotLevel, 0, 12);
         }
         get { return shotLevel; }
-    }
-
-    public int HP
-    {
-        set
-        {
-            hp = value;
-            hp = Mathf.Clamp(hp, 0, 10);
-        }
-        get { return hp; }
     }
 
     // 自キャラのスピードの値を他のスクリプトから
@@ -80,15 +62,12 @@ public class PleyerCon : MonoBehaviour
         //ココにplayerである猫の動きを構成する
         speed = 7;
         this.animator = GetComponent<Animator>();
-<<<<<<< HEAD
         hp = 10;
-=======
 
         //Sliderを最大にする。
         slider.value = 1;
         //HPを最大HPと同じ値に。
         Hp = maxHp;
->>>>>>> origin/main
     }
 
     void Update()
@@ -158,18 +137,6 @@ public class PleyerCon : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag == "Enemy")
-        {
-            hp -= 1;
-            hpLabel.text = "HP " + hp + "/10";
-            if(hp == 0)
-            {
-                SceneManager.LoadScene("GameOverScene");
-            }
-        }
-    }
 
 
 }
