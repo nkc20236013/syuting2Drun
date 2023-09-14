@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameDirector : MonoBehaviour
+public class GameDirector3 : MonoBehaviour
 {
     public Text scoreLabel;
 

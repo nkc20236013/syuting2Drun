@@ -15,10 +15,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Stage2/GameScene2.unity
     guid: 3cc1162e3764c3b4a9d2589df4a5fcaa
   - enabled: 1
-    path: Assets/Scenes/GameScene3.unity
+    path: Assets/Scenes/Stage3/GameScene3.unity
     guid: 8ed82260829f21944b79d630a83d5bd7
   - enabled: 1
-    path: Assets/Scenes/GameScene4.unity
+    path: Assets/Scenes/Stage4/GameScene4.unity
     guid: 4015e51355c9cf24f84055928e35717a
   - enabled: 1
     path: Assets/Scenes/Rule/Rule.unity
