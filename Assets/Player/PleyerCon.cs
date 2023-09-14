@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+<<<<<<< HEAD
 using UnityEngine.SceneManagement;
+=======
+>>>>>>> origin/main
 using UnityEngine.UI;
 
 public class PleyerCon : MonoBehaviour
@@ -15,17 +18,25 @@ public class PleyerCon : MonoBehaviour
 
     private float jumpForce = 350f; //ジャンプ力
 
-    public int MaxJumpCount = 2;
+    public int MaxJumpCount = 2; //最大ジャンプ数
 
-    private int jumpCount = 0;
+    private int jumpCount = 0;  //ジャンプ回数
 
     public GameObject kedamaPre; // 弾のプレハブをセット
 
     int shotLevel;  // 武器のレベル
 
+<<<<<<< HEAD
     int hp; // 残りHP
 
     public Text hpLabel;
+=======
+    //最大HPと現在のHP。
+    public int maxHp = 10;
+    public int Hp;
+    //Slider
+    public Slider slider;
+>>>>>>> origin/main
 
     public int ShotLevel
     {
@@ -69,7 +80,15 @@ public class PleyerCon : MonoBehaviour
         //ココにplayerである猫の動きを構成する
         speed = 7;
         this.animator = GetComponent<Animator>();
+<<<<<<< HEAD
         hp = 10;
+=======
+
+        //Sliderを最大にする。
+        slider.value = 1;
+        //HPを最大HPと同じ値に。
+        Hp = maxHp;
+>>>>>>> origin/main
     }
 
     void Update()
@@ -123,6 +142,19 @@ public class PleyerCon : MonoBehaviour
         if (other.gameObject.CompareTag("Floor"))
         {
             jumpCount = 0;
+        }
+    }
+    private void OnTriggerEnter(Collider collider)
+    {
+        //Enemyタグを設定しているオブジェクトに接触したとき
+        if (collider.gameObject.tag == "Enemy")
+        {
+            //HPから1を引く
+            Hp = Hp - 1;
+
+            //HPをSliderに反映。
+            slider.value = (float)Hp / (float)maxHp; ;
+
         }
     }
 

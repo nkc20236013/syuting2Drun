@@ -57,7 +57,7 @@ public class EnemyG : MonoBehaviour
             span -= (span >= 0.5f) ? 0.02f : 0f;
 
             GameObject go = Instantiate(kuziraPre);
-            int py = Random.Range(-5, 6);
+            float py = Random.Range(-4.2f,-4.2f);
             go.transform.position = new Vector3(10, py, 0);
         }
     }
