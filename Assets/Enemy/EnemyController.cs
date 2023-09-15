@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Enemy : MonoBehaviour
     float rad;                  // 敵の動きサインカーブ用
     float shotTime;             // 弾の発射間隔計算用
     float shotInterval = 1.5f;    // 弾の発射間隔
+    public Slider slider;
+    PleyerCon pc;
 
     void Start()
     {
@@ -22,6 +25,7 @@ public class Enemy : MonoBehaviour
         dir = Vector3.left;             // 移動方向
         rad = Time.time;                // サインカーブの動きをずらす用
         shotTime = 0.3f;                   // 弾発射間隔計算用
+        //pc = GameObject.Find("PleyerCon").GetComponent<PleyerCon>();
     }
 
     // Update is called once per frame

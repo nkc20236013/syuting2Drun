@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PleyerCon : MonoBehaviour
 {
     Vector3 dir;    // 移動方向保存
+    [SerializeField, Header("移動速度")]
     float speed;    // 移動速度保存
     float timer;    // 自弾の発射間隔計算用
     Animator animator;   // アニメーターコンポーネントを保存
@@ -22,11 +24,9 @@ public class PleyerCon : MonoBehaviour
 
     int shotLevel;  // 武器のレベル
 
-    int hp; // 残りHP
-
     //最大HPと現在のHP。
-    public int maxHp = 10;
-    public int Hp;
+    public float maxHp = 10;
+    public float Hp;
     //Slider
     public Slider slider;
 
@@ -51,6 +51,24 @@ public class PleyerCon : MonoBehaviour
         }
         get { return speed; }
     }
+    public float MaxHp
+    {
+        set
+        {
+            maxHp = value;
+            maxHp = Mathf.Clamp(maxHp, 0, 10);
+        }
+        get { return maxHp; }
+    }
+    public float HP
+    {
+        set
+        {
+            Hp = value;
+            Hp = Mathf.Clamp(Hp, 0, 10);
+        }
+        get { return Hp; }
+    }
 
 
 
@@ -59,13 +77,10 @@ public class PleyerCon : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        //ココにplayerである猫の動きを構成する
-        speed = 7;
         this.animator = GetComponent<Animator>();
-        hp = 10;
 
         //Sliderを最大にする。
-        slider.value = 1;
+        slider.value = 10;
         //HPを最大HPと同じ値に。
         Hp = maxHp;
     }
@@ -123,13 +138,13 @@ public class PleyerCon : MonoBehaviour
             jumpCount = 0;
         }
     }
-    private void OnTriggerEnter(Collider collider)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
         //Enemyタグを設定しているオブジェクトに接触したとき
-        if (collider.gameObject.tag == "Enemy")
+        if (collider.tag == "Enemy")
         {
-            //HPから1を引く
-            Hp = Hp - 1;
+            //HPから10を引く
+            Hp = Hp -10;
 
             //HPをSliderに反映。
             slider.value = (float)Hp / (float)maxHp; ;
