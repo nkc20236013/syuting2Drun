@@ -33,6 +33,12 @@ public class GameDirector : MonoBehaviour
         scoreLabel.text = "Score " + score.ToString("D6");
         if(delta >= 30)
         {
+            if (score >= 1000)
+            {
+                PlayerPrefs.SetInt("SCORE", 2);
+                PlayerPrefs.Save();
+            }
+
             SceneManager.LoadScene("TitleScene");
         }
     }

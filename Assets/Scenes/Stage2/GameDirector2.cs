@@ -26,5 +26,11 @@ public class GameDirector2 : MonoBehaviour
     void Update()
     {
         scoreLabel.text = "Score " + score.ToString("D7");
+        if (score >= 1000)
+        {
+            PlayerPrefs.SetInt("SCORE", 3);
+            PlayerPrefs.Save();
+        }
+
     }
 }

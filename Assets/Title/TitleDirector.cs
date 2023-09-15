@@ -22,7 +22,7 @@ public class TitleDirector : MonoBehaviour
     void Start()
     {
         // ハイスコアリセット用
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
 
         Score1 = PlayerPrefs.GetInt(key1, 0);
         score1Label.text = "HighScore\n" + Score1.ToString("D6");
@@ -44,33 +44,18 @@ public class TitleDirector : MonoBehaviour
             Score1 = GameDirector.score;
             PlayerPrefs.SetInt(key1, Score1);
             score1Label.text = "HighScore\n" + Score1.ToString("D6");
-            if (Score1 >= 1000)
-            {
-                PlayerPrefs.SetInt("SCORE", 1);
-                PlayerPrefs.Save();
-            }
         }
         if (GameDirector2.score >  Score2)
         {
             Score2 = GameDirector2.score;
             PlayerPrefs.SetInt(key2, Score2);
             score2Label.text = "HighScore\n" + Score2.ToString("D6");
-            if (Score2 >= 1000)
-            {
-                PlayerPrefs.SetInt("SCORE", 2);
-                PlayerPrefs.Save();
-            }
         }
         if (GameDirector3.score > Score3)
         {
             Score3 = GameDirector3.score;
             PlayerPrefs.SetInt(key3, Score3);
             score3Label.text = "HighScore\n" + Score3.ToString("D6");
-            if (Score3 >= 1000)
-            {
-                PlayerPrefs.SetInt("SCORE", 3);
-                PlayerPrefs.Save();
-            }
         }
         if (GameDirector4.score > Score4)
         {
