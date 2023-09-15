@@ -12,6 +12,7 @@ TagManager:
   - S4
   - S3
   - Floor
+  - Slider
   layers:
   - Default
   - TransparentFX
