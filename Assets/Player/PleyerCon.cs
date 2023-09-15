@@ -28,7 +28,6 @@ public class PleyerCon : MonoBehaviour
     public float maxHp = 10;
     public float Hp;
     //Slider
-    public Slider slider;
 
     public int ShotLevel
     {
@@ -79,8 +78,11 @@ public class PleyerCon : MonoBehaviour
 
         this.animator = GetComponent<Animator>();
 
+<<<<<<< HEAD
         //Sliderを最大にする。
         slider.value = 10;
+=======
+>>>>>>> origin/main
         //HPを最大HPと同じ値に。
         Hp = maxHp;
     }
@@ -146,8 +148,6 @@ public class PleyerCon : MonoBehaviour
             //HPから10を引く
             Hp = Hp -10;
 
-            //HPをSliderに反映。
-            slider.value = (float)Hp / (float)maxHp; ;
 
         }
     }
