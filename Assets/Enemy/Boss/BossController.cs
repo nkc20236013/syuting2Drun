@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossController : MonoBehaviour
 {
@@ -27,5 +28,16 @@ public class BossController : MonoBehaviour
             gameObject.transform.position = new Vector3(6, dir.y, dir.x);
         }
         transform.position += dir.normalized * speed * Time.deltaTime;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "PlayerShot")
+        {
+            HP -= 1;
+            if(HP == 0)
+            {
+                SceneManager.LoadScene("TitleScene");
+            }
+        }
     }
 }
