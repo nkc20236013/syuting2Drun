@@ -2278,8 +2278,7 @@ MonoBehaviour:
   speed: 7
   MaxJumpCount: 2
   kedamaPre: {fileID: 2518872501825223983, guid: de6b9a828fd0639488c35e0f1babc5db, type: 3}
-  maxHp: 100
-  Hp: 0
+  slider: {fileID: 1877927883}
 --- !u!50 &900740596
 Rigidbody2D:
   serializedVersion: 4
@@ -3343,6 +3342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 619e09c49bb9a464a95e8437c62d1576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreLabel: {fileID: 720783901}
 --- !u!4 &1661523515
 Transform:
   m_ObjectHideFlags: 0
@@ -4205,7 +4205,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1967722139
 MonoBehaviour:
@@ -4219,7 +4219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11f22037e35b9564bb416c567cc7b42e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreLabel: {fileID: 720783901}
 --- !u!1 &1996681577
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,9 +25,11 @@ public class PleyerCon : MonoBehaviour
     int shotLevel;  // 武器のレベル
 
     //最大HPと現在のHP。
-    public float maxHp = 10;
-    public float Hp;
+    float maxHp = 100;
+    float Hp;
     //Slider
+    public Slider slider;
+
 
     public int ShotLevel
     {
@@ -78,11 +80,8 @@ public class PleyerCon : MonoBehaviour
 
         this.animator = GetComponent<Animator>();
 
-<<<<<<< HEAD
         //Sliderを最大にする。
-        slider.value = 10;
-=======
->>>>>>> origin/main
+        slider.value = 1;
         //HPを最大HPと同じ値に。
         Hp = maxHp;
     }
@@ -132,10 +131,10 @@ public class PleyerCon : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionEnter2D(Collision2D ot)
     {
         //地面に当たったらジャンプカウントが0になる
-        if (other.gameObject.CompareTag("Floor"))
+        if (ot.gameObject.CompareTag("Floor"))
         {
             jumpCount = 0;
         }
@@ -148,9 +147,42 @@ public class PleyerCon : MonoBehaviour
             //HPから10を引く
             Hp = Hp -10;
 
+            Debug.Log("アタリ");
+
+            //HPをSliderに反映。
+            slider.value = (float)Hp / (float)maxHp;
+
 
         }
     }
+
+    ////private void OnTriggerEnter2D(Collider2D other)
+    ////{
+    ////    // アイテムにヒット
+    ////    if (other.gameObject.CompareTag("Item"))
+    ////    {
+    ////        ItemController item = other.gameObject.GetComponent<ItemController>();
+
+    ////        if (item)
+    ////        {
+    ////            switch (item.GetItemType())
+    ////            {
+    ////                // 移動スピードアップ
+    ////                case ItemController.ITEM_TYPE.SPEED_UP:
+    ////                    {
+    ////                        ++moveSpeedIndex;
+    ////                        moveSpeedIndex = Mathf.Min(moveSpeedIndex, MoveSpeedList.Count - 1);
+
+    ////                        SoundManager.Instance.PlaySe("speed_up");
+    ////                    }
+    ////                    break;
+    ////            }
+    ////        }
+
+    ////        // アイテムを消す
+    ////        Destroy(other.gameObject);
+    ////    }
+    //}
 
 
 
