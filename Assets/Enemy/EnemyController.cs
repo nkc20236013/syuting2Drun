@@ -14,7 +14,10 @@ public class Enemy : MonoBehaviour
     float shotInterval = 1.5f;    // 弾の発射間隔
     public Slider slider;
     PleyerCon pc;
+<<<<<<< HEAD
     GameDirector gd;
+=======
+>>>>>>> origin/main
 
     void Start()
     {
@@ -27,7 +30,11 @@ public class Enemy : MonoBehaviour
         rad = Time.time;                // サインカーブの動きをずらす用
         shotTime = 0.3f;                   // 弾発射間隔計算用
         //pc = GameObject.Find("PleyerCon").GetComponent<PleyerCon>();
+<<<<<<< HEAD
         gd = GameObject.Find("GameDirector").GetComponent<GameDirector>();
+=======
+
+>>>>>>> origin/main
     }
 
     // Update is called once per frame
@@ -58,7 +65,6 @@ public class Enemy : MonoBehaviour
         {
             // 自分（敵）削除
             Destroy(gameObject);
-            gd.Score += 100;
         }
     }
 }

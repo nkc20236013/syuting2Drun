@@ -16,15 +16,15 @@ public class StageControllre : MonoBehaviour
 
     void Update()
     {
-        if (stage_num >= 1)
+        if (stage_num >= 2)
         {
             ni.SetActive(true);
         }
-        if (stage_num >= 2)
+        if (stage_num >= 3)
         {
             san.SetActive(true);
         }
-        if(stage_num >= 3)
+        if(stage_num >= 4)
         {
             yon.SetActive(true);
         }
