@@ -22,7 +22,7 @@ public class TitleDirector : MonoBehaviour
     void Start()
     {
         // ハイスコアリセット用
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
 
         Score1 = PlayerPrefs.GetInt(key1, 0);
         score1Label.text = "HighScore\n" + Score1.ToString("D6");
