@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameDirector2 : MonoBehaviour
@@ -8,6 +9,8 @@ public class GameDirector2 : MonoBehaviour
     public Text scoreLabel;
 
     public static int score;
+
+    PleyerCon pc;
 
     public int Score
     {
@@ -31,6 +34,11 @@ public class GameDirector2 : MonoBehaviour
             PlayerPrefs.SetInt("SCORE", 3);
             PlayerPrefs.Save();
         }
+        // HPが1より小さくなったらゲームオーバーシーンへ
+        if (pc.HP < 1)
+        {
+            SceneManager.LoadScene("GameOverScene");
 
+        }
     }
 }

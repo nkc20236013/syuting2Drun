@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PleyerCon : MonoBehaviour
+public class PleyerCon1 : MonoBehaviour
 {
     Vector3 dir;    // ˆÚ“®•ûŒü•Û‘¶
     [SerializeField, Header("ˆÚ“®‘¬“x")]

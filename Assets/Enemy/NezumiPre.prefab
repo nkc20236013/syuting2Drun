@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6376231839390746878}
   - component: {fileID: 1373375389771716375}
   m_Layer: 0
-  m_Name: kuziraPre
+  m_Name: NezumiPre
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4766e3c40c99fd64b80c09017ccbd901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemObj: {fileID: 4477179982754700895, guid: 55dfec87886a3f448b21037b2f78639e, type: 3}
+  slider: {fileID: 0}
 --- !u!58 &6376231839390746878
 CircleCollider2D:
   m_ObjectHideFlags: 0

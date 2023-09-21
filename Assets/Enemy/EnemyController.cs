@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] GameObject itemObj;          // アイテムオブジェクト
     float speed;                // 移動速度を保存
     Vector3 dir;                // 移動方向を保存
     int enemyType;              // 敵の種類を保存
@@ -59,6 +60,16 @@ public class Enemy : MonoBehaviour
         {
             // 自分（敵）削除
             Destroy(gameObject);
+        }
+
+        // 当たったのがプレイヤーの弾
+        if (p.gameObject.CompareTag("PlayerShot"))
+        {
+            // アイテムがセットされていれば生成
+            if (itemObj)
+            {
+                Instantiate(itemObj, transform.position, Quaternion.identity);
+            }
         }
     }
 }

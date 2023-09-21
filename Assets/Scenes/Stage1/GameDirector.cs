@@ -1,57 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-    public class GameDirector : MonoBehaviour
+public class GameDirector : MonoBehaviour
+{
+    public Text scoreLabel;
+
+    public static int score;
+
+    PleyerCon1 pc;
+
+    public int Score
     {
-        public Text scoreLabel;
-
-        public static int score;
-
-        float delta;
-    PleyerCon pc;
-
-
-        public int Score
+        set
         {
-            set
-            {
-                score = value;
-                score = Mathf.Clamp(score, 0, 999999);
-            }
-            get { return score; }
+            score = value;
+            score = Mathf.Clamp(score, 0, 999999);
         }
-        void Start()
+        get { return score; }
+    }
+    void Start()
+    {
+        score = 0;
+    }
+
+    void Update()
+    {
+        scoreLabel.text = "Score " + score.ToString("D7");
+        if (score >= 1000)
         {
-            score = 0;
-
-            pc = GameObject.Find("Player").GetComponent<PleyerCon>();
-
+            PlayerPrefs.SetInt("SCORE", 3);
+            PlayerPrefs.Save();
         }
-
-        void Update()
+        // HPが1より小さくなったらゲームオーバーシーンへ
+        if (pc.HP < 1)
         {
-            delta += Time.deltaTime;
-        scoreLabel.text = "Score " + score.ToString("D6");
-        if (delta >= 30)
-        {
-            if (score >= 1000)
-            {
-                PlayerPrefs.SetInt("SCORE", 2);
-                PlayerPrefs.Save();
-            }
-            // HPが1より小さくなったらゲームオーバーシーンへ
-            if (pc.HP < 1)
-            {
-                SceneManager.LoadScene("GameOverScene");
+            SceneManager.LoadScene("GameOverScene");
 
-            }
         }
     }
 
-
-
 }
-
