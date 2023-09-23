@@ -36,7 +36,7 @@ public class BossController : MonoBehaviour
             HP -= 1;
             if(HP == 0)
             {
-                SceneManager.LoadScene("TitleScene");
+                SceneManager.LoadScene("ClearScene");
             }
         }
     }
