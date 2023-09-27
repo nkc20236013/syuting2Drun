@@ -11,7 +11,7 @@ public class EnemyController2 : MonoBehaviour
     float rad;                  // 敵の動きサインカーブ用
     float shotTime;             // 弾の発射間隔計算用
     float shotInterval = 1.5f;    // 弾の発射間隔
-    GameDirector2 gd;
+    GameDirector gd;
 
     void Start()
     {
@@ -23,7 +23,7 @@ public class EnemyController2 : MonoBehaviour
         dir = Vector3.left;             // 移動方向
         rad = Time.time;                // サインカーブの動きをずらす用
         shotTime = 0.3f;                   // 弾発射間隔計算用
-        gd = GameObject.Find("GameDirector").GetComponent<GameDirector2>();
+        gd = GameObject.Find("GameDirector").GetComponent<GameDirector>();
     }
 
     // Update is called once per frame

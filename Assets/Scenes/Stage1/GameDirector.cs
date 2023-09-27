@@ -9,8 +9,7 @@ public class GameDirector : MonoBehaviour
     public Text scoreLabel;
 
     public static int score;
-
-    PleyerCon1 pc;
+    private PlayerCon pc;
 
     public int Score
     {
@@ -24,6 +23,7 @@ public class GameDirector : MonoBehaviour
     void Start()
     {
         score = 0;
+        pc = GameObject.Find("Player").GetComponent<PlayerCon>();
     }
 
     void Update()

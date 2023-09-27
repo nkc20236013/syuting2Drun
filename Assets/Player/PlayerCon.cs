@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PleyerCon1 : MonoBehaviour
+public class PlayerCon : MonoBehaviour
 {
     Vector3 dir;    // 移動方向保存
     [SerializeField, Header("移動速度")]
@@ -52,6 +52,8 @@ public class PleyerCon1 : MonoBehaviour
         }
         get { return speed; }
     }
+    // 自キャラのMaxHPを他のスクリプトから
+    // 参照・変更するためのプロパティ
     public float MaxHp
     {
         set
@@ -61,6 +63,8 @@ public class PleyerCon1 : MonoBehaviour
         }
         get { return maxHp; }
     }
+    // 自キャラのHPを他のスクリプトから
+    // 参照・変更するためのプロパティ
     public float HP
     {
         set

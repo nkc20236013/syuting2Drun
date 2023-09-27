@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     float shotTime;             // ’e‚Ì”­ŽËŠÔŠuŒvŽZ—p
     float shotInterval = 1.5f;    // ’e‚Ì”­ŽËŠÔŠu
     public Slider slider;
-    PleyerCon pc;
+    PlayerCon pc;
     GameDirector gd;
 
     void Start()
