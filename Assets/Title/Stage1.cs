@@ -9,4 +9,15 @@ public class Stage1 : MonoBehaviour
     {
         SceneManager.LoadScene("GameScene");
     }
+
+    public void finish()
+    {
+        Invoke("Call", 3f);
+    }
+
+    void Call()
+    {
+        OnclickStartButton();
+    }
+
 }
