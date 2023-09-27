@@ -631,7 +631,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Score
+  m_Text: 'HighScore
 
     000000'
 --- !u!222 &316478609
@@ -2342,7 +2342,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Score
+  m_Text: 'HighScore
 
     000000'
 --- !u!222 &960050007
@@ -3019,7 +3019,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Score
+  m_Text: 'HighScore
 
     000000'
 --- !u!222 &1209434579
@@ -5126,7 +5126,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Score
+  m_Text: 'HighScore
 
     000000'
 --- !u!222 &2079059565
