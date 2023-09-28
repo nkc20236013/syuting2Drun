@@ -31,7 +31,7 @@ public class GameDirector : MonoBehaviour
         scoreLabel.text = "Score " + score.ToString("D7");
         if (score >= 1000)
         {
-            PlayerPrefs.SetInt("SCORE", 3);
+            PlayerPrefs.SetInt("SCORE", 2);
             PlayerPrefs.Save();
         }
         // HPが1より小さくなったらゲームオーバーシーンへ
