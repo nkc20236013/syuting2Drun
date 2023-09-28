@@ -10,22 +10,24 @@ public class BossController : MonoBehaviour
     float rad;
     float speed;
     int HP;
+    Transform player;
 
 
     void Start()
     {
         dir = Vector3.left;
-        HP = 10;
+        HP = 50;
         rad = Time.time;
         speed = 5f;
+        player = GameObject.Find("Player").transform;
     }
 
     void Update()
     {
-        if (transform.position.x <= 6)
+        if (transform.position.x <= player.position.x + 6)
         {
             dir.y = Mathf.Sin(rad + Time.time * 2f);
-            gameObject.transform.position = new Vector3(6, dir.y, dir.x);
+            gameObject.transform.position = new Vector3(player.position.x + 6, dir.y, dir.x);
         }
         transform.position += dir.normalized * speed * Time.deltaTime;
     }

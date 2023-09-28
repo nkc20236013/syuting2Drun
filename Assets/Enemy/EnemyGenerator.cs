@@ -18,12 +18,14 @@ public class EnemyG : MonoBehaviour
     public GameObject Boss3;
     float Bosstime;
     float Bossspan = 30;
+    Transform Player;
 
     PlayerCon pc;
 
     private void Start()
     {
         pc = GameObject.Find("Player").GetComponent<PlayerCon>();
+        Player = GameObject.Find("Player").transform;
     }
 
 
@@ -38,7 +40,7 @@ public class EnemyG : MonoBehaviour
             {
                 Bosstime = 0;
                 GameObject go = Instantiate(Boss);
-                go.transform.position = new Vector3(10, 0, 0);
+                go.transform.position = new Vector3(Player.position.x + 10, 0, 0);
             }
             else
             {
@@ -47,13 +49,13 @@ public class EnemyG : MonoBehaviour
                 {
                     Bosstime = 0;
                     GameObject go = Instantiate(Boss2);
-                    go.transform.position = new Vector3(10, 0, 0);
+                    go.transform.position = new Vector3(Player.position.x + 10, 0, 0);
                 }
                 else
                 {
                     Bosstime = 0;
                     GameObject go = Instantiate(Boss3);
-                    go.transform.position = new Vector3(10, 0, 0);
+                    go.transform.position = new Vector3(Player.position.x + 10, 0, 0);
                 }
             }
         }

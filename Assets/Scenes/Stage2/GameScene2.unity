@@ -2582,9 +2582,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kuziraPre: {fileID: 5553802184841445582, guid: 67c4439c70cc2b146be4cdde7a1715f6, type: 3}
-  Boss: {fileID: 4610624667625502960, guid: 64db62574e30ea945aabd4df20a02b11, type: 3}
+  Boss: {fileID: 1005005110692152603, guid: a254ec47f27b2c74d804157157934855, type: 3}
   Boss2: {fileID: 5111832651287023378, guid: 84ed5165dbfd4274b86251a60ebac5f8, type: 3}
-  Boss3: {fileID: 1636992417759125287, guid: 93000db39ccab074aadd423682db06a6, type: 3}
+  Boss3: {fileID: 1005005110692152603, guid: a254ec47f27b2c74d804157157934855, type: 3}
 --- !u!4 &374672689
 Transform:
   m_ObjectHideFlags: 0
