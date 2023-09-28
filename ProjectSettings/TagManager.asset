@@ -4,10 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Enemy
+  - PlayerShot
   - S1
+  - rule
   - S2
-  - S3
   - S4
+  - S3
+  - Floor
+  - Slider
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -42,6 +48,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BG
+    uniqueID: 2751066979
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

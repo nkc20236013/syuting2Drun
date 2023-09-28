@@ -12,20 +12,43 @@ public class cursorControllre : MonoBehaviour
     bool S2 = false;
     bool S3 = false;
     bool S4 = false;
+    bool rule = false;
 
     void Start()
     {
-         speed = 3f;
+        speed = 5f;
     }
 
     void Update()
     {
+        // ÉJÅ[É\ÉãëÄçÏ
         dir.x = Input.GetAxisRaw("Horizontal");
         dir.y = Input.GetAxisRaw("Vertical");
         transform.position += dir.normalized * speed * Time.deltaTime;
-        if(S1 == true && Input.GetButtonDown("Fire1"))
+        // âÊñ ì‡êßå¿
+        Vector2 pos = transform.position;
+        pos.x = Mathf.Clamp(pos.x, -9f, 9f);
+        pos.y = Mathf.Clamp(pos.y, -5f, 5f);
+        transform.position = pos;
+        if (S1 == true && Input.GetButtonDown("Fire1"))
         {
             SceneManager.LoadScene("GameScene");
+        }
+        if (S2 == true && Input.GetButtonDown("Fire1"))
+        {
+            SceneManager.LoadScene("GameScene2");
+        }
+        if (S3 == true && Input.GetButtonDown("Fire1"))
+        {
+            SceneManager.LoadScene("GameScene3");
+        }
+        if (S4 == true && Input.GetButtonDown("Fire1"))
+        {
+            SceneManager.LoadScene("GameScene4");
+        }
+        if (rule == true && Input.GetButtonDown("Fire1"))
+        {
+            SceneManager.LoadScene("Rule");
         }
     }
 
@@ -34,6 +57,22 @@ public class cursorControllre : MonoBehaviour
         if(collision.tag == "S1")
         {
             S1 = true;
+        }
+        if(collision.tag == "S2")
+        {
+            S2 = true;
+        }
+        if (collision.tag == "S3")
+        {
+            S3 = true;
+        }
+        if (collision.tag == "S4")
+        {
+            S4 = true;
+        }
+        if (collision.tag == "rule")
+        {
+            rule = true;
         }
     }
 }
