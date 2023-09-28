@@ -25,15 +25,15 @@ public class PleyerCon : MonoBehaviour
 
         // âÊñ ì‡êßå¿
         Vector2 pos = transform.position;
-        pos.x = Mathf.Clamp(pos.x, -8.5f, 8.5f);
-        pos.y = Mathf.Clamp(pos.y, -5f, 5f);
+        pos.x = Mathf.Clamp(pos.x, -10.5f, 10.5f);
+        pos.y = Mathf.Clamp(pos.y, -4.2f, 5f);
         transform.position = pos;
 
         this.animator.speed = speedx / 1.5f;
 
         if(dir.x!=0)
         {
-            transform.localScale = new Vector3(dir.x, 5, 1);
+            transform.localScale = new Vector3(dir.x, 1, 1);
         }
     }
 
