@@ -15,11 +15,18 @@ public class EnemyG : MonoBehaviour
     int randoma;
     public GameObject Boss;
     public GameObject Boss2;
-    public GameObject Boss2R;
+    public GameObject Boss3;
     float Bosstime;
     float Bossspan = 30;
 
-    
+    PlayerCon pc;
+
+    private void Start()
+    {
+        pc = GameObject.Find("Player").GetComponent<PlayerCon>();
+    }
+
+
     void Update()
     {
         mouse += Time.deltaTime;
@@ -45,7 +52,7 @@ public class EnemyG : MonoBehaviour
                 else
                 {
                     Bosstime = 0;
-                    GameObject go = Instantiate(Boss2R);
+                    GameObject go = Instantiate(Boss3);
                     go.transform.position = new Vector3(10, 0, 0);
                 }
             }
@@ -58,7 +65,7 @@ public class EnemyG : MonoBehaviour
 
             GameObject go = Instantiate(kuziraPre);
             float py = Random.Range(-4.2f,-4.2f);
-            go.transform.position = new Vector3(10, py, 0);
+            go.transform.position = new Vector3(28, py, 0);
         }
     }
 }

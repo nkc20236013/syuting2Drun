@@ -30,6 +30,9 @@ public class PlayerCon2 : MonoBehaviour
     //Slider
     public Slider slider;
 
+    public AudioClip jumpSE; //ジャンプ音
+    private AudioSource audioSource;　//オーディオソース  
+
 
     public int ShotLevel
     {
@@ -89,7 +92,10 @@ public class PlayerCon2 : MonoBehaviour
         slider.value = 10;
         //HPを最大HPと同じ値に。
         Hp = maxHp;
+
+        audioSource = this.gameObject.GetComponent<AudioSource>(); //オーディオソース取得
     }
+
 
     void Update()
     {
@@ -100,8 +106,8 @@ public class PlayerCon2 : MonoBehaviour
 
         // 画面内制限
         Vector2 pos = transform.position;
-        //pos.x = Mathf.Clamp(pos.x, -20f, 20f);
-        //pos.y = Mathf.Clamp(pos.y, -4.25f, 4.25f);
+        pos.x = Mathf.Clamp(pos.x, -10f, 10f);
+        pos.y = Mathf.Clamp(pos.y, -4.25f, 4.25f);
         transform.position = pos;
 
         this.animator.speed = speedx / 1.5f;
@@ -111,11 +117,12 @@ public class PlayerCon2 : MonoBehaviour
         {
             this.rb.AddForce(transform.up * jumpForce);
             jumpCount++;
+            //GetComponent<AudioSource>().Play();  // 効果音を鳴らす
         }
 
         // Zキーが押されているとき弾を発射
         timer += Time.deltaTime;
-        if (timer >= 0.3f && Input.GetKey(KeyCode.Z))
+        if (timer >= 0.8f && Input.GetKey(KeyCode.Z))
         {
             timer = 0;
             shotLevel = (shotLevel < 0) ? 0 : shotLevel;
@@ -126,7 +133,7 @@ public class PlayerCon2 : MonoBehaviour
 
                 // プレーヤーの回転角度を取得し、15度ずつずらした方向に弾を回転させる
                 Quaternion rot = Quaternion.identity;
-                rot.eulerAngles = transform.rotation.eulerAngles + new Vector3(0, 0, 15f * i);
+                rot.eulerAngles = transform.rotation.eulerAngles + new Vector3(0, 0, 1f * i);
 
                 // 位置と回転情報をセットして生成
                 Instantiate(kedamaPre, p, rot);
@@ -148,7 +155,7 @@ public class PlayerCon2 : MonoBehaviour
         {
             // 強化処理
             Hp = Hp += 10;
-            Speed += 2;
+            shotLevel += 1;
 
             slider.value = (float)Hp / (float)maxHp;
 
@@ -165,7 +172,7 @@ public class PlayerCon2 : MonoBehaviour
             //HPから10を引く
             Hp = Hp - 10;
 
-            Debug.Log("アタリ");
+            GetComponent<AudioSource>().Play();  // 効果音を鳴らす
 
             //HPをSliderに反映。
             slider.value = (float)Hp / (float)maxHp;
@@ -173,36 +180,5 @@ public class PlayerCon2 : MonoBehaviour
 
         }
     }
-
-
-    ////private void OnTriggerEnter2D(Collider2D other)
-    ////{
-    ////    // アイテムにヒット
-    ////    if (other.gameObject.CompareTag("Item"))
-    ////    {
-    ////        ItemController item = other.gameObject.GetComponent<ItemController>();
-
-    ////        if (item)
-    ////        {
-    ////            switch (item.GetItemType())
-    ////            {
-    ////                // 移動スピードアップ
-    ////                case ItemController.ITEM_TYPE.SPEED_UP:
-    ////                    {
-    ////                        ++moveSpeedIndex;
-    ////                        moveSpeedIndex = Mathf.Min(moveSpeedIndex, MoveSpeedList.Count - 1);
-
-    ////                        SoundManager.Instance.PlaySe("speed_up");
-    ////                    }
-    ////                    break;
-    ////            }
-    ////        }
-
-    ////        // アイテムを消す
-    ////        Destroy(other.gameObject);
-    ////    }
-    //}
-
-
 
 }

@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7907310824931991019}
   - component: {fileID: 8035002581071616022}
-  - component: {fileID: 3827368702879832510}
   - component: {fileID: 427669119663276135}
+  - component: {fileID: 2298760864993097314}
   m_Layer: 0
-  m_Name: rat-removebg-preview
+  m_Name: rat-removebg-preview 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,20 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3827368702879832510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5553802184841445582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5964fa848527968439439893532edc93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemObj: {fileID: 4477179982754700895, guid: 55dfec87886a3f448b21037b2f78639e, type: 3}
-  slider: {fileID: 0}
 --- !u!61 &427669119663276135
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -145,3 +131,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &2298760864993097314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5553802184841445582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 584d4ff2195684c40b6ad0dd30fd55e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemObj: {fileID: 4477179982754700895, guid: 55dfec87886a3f448b21037b2f78639e, type: 3}
+  slider: {fileID: 0}

@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyController2 : MonoBehaviour
+public class EnemyController3 : MonoBehaviour
 {
     [SerializeField] GameObject itemObj;          // アイテムオブジェクト
     float speed;                // 移動速度を保存
@@ -16,7 +16,7 @@ public class EnemyController2 : MonoBehaviour
     float shotInterval = 1.5f;    // 弾の発射間隔
     public Slider slider;
     PlayerCon pc;
-    GameDirector2 gd;
+    GameDirector3 gd;
     int HP;
 
     void Start()
@@ -32,7 +32,7 @@ public class EnemyController2 : MonoBehaviour
         shotTime = 0.3f;                   // 弾発射間隔計算用
         HP = 2;                            //敵のHP
         //pc = GameObject.Find("PleyerCon").GetComponent<PleyerCon>();
-        gd = GameObject.Find("GameDirector2").GetComponent<GameDirector2>();
+        gd = GameObject.Find("GameDirector3").GetComponent<GameDirector3>();
         //enemyType2だけHP1
         if (enemyType == 2)
         {
