@@ -435,7 +435,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 195973736}
         m_TargetAssemblyTypeName: Stage3, Assembly-CSharp
-        m_MethodName: OnclickStartButton
+        m_MethodName: finish
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1652,7 +1652,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 612149432}
         m_TargetAssemblyTypeName: Stage4, Assembly-CSharp
-        m_MethodName: OnclickStartButton
+        m_MethodName: finish
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
